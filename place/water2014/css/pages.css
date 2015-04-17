@@ -356,6 +356,7 @@ div.pg-box-content {
 }
 
 #pg-interview {
+	font-family: 'NewsGothicBT-RomanCondensed',sans-serif;
 	position:absolute;
 	top:	15%;
     width:	40%;  
