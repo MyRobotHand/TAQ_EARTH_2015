@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Tiny Atlas Quarterly | Portraits, Earth 2015</title>
+        <title>Tiny Atlas Quarterly | Portraits: Earth 2015</title>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,611 +10,752 @@
         <link rel="stylesheet" type="text/css" href="css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="../../css/fonts.css" />
         <link rel="stylesheet" type="text/css" href="css/pages.css" />
-        
         <link rel="shortcut icon" href="../../images/favicon.png">
+        
+        <style type="text/css">
+   			html, body { -webkit-font-smoothing: antialiased; }
+		</style>
 
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript" src="../../js/velocity.min.js"></script>
 		<script type="text/javascript" src="../../js/jquery.easing.min.js"></script>
         <script type="text/javascript" src="../../js/jquery.transit.js"></script>
-        
-        <script src="../../js/matchmedia.js"></script>
-		<script src="../../js/picturefill.js"></script>
 
+		<script>
+		// Picture element HTML5 shiv
+		document.createElement( "picture" );
+		</script>
+		<script src="../../js/picturefill.2.1.0.js" async></script>
+        
+        <script src="../../js/sil.js"></script>
+                
+        <script>
+        $(window).load(function () {
+    		//This is where you could start a loading animation.
+
+    		//Then start loading the images.
+    		$.preloadImages({
+        		StepCallback: function (CurrentImage, TotalImages, LoadedElement, LoadTime) {
+            	console.log("Loaded image " + CurrentImage + "/" + TotalImages + " in " + LoadTime + " ms.");
+				
+            	//This is where you could update some sort of progress indicator.
+        		},
+
+        		DoneCallback: function () {
+            	console.log("Done loading the images.");
+
+            	//This is where you could stop the loading animation.
+        		}	
+    		});
+		});
+		</script>
+        
         <script type="text/javascript">		
-				window.addEventListener("load",function() {
-		   		setTimeout(function(){
-						window.scrollTo(0, 1);
-				}, 0);
-				});	
-       // <![CDATA[
-			$(document).ready(function() {
-				pgPositionLogo ();
-			});
-		// ]]>
+				$(function(){
+    				$("#page1").each(function(index) {
+						$(this).hide().delay(100*index).velocity({ opacity: 1 }, { display: "block" }, { duration: 2000 },"easeOutCirc");
+    				});
+					$("#nav-buttons").each(function(index) {
+						$(this).hide().delay(100*index).velocity({ opacity: 1 }, { display: "block" }, { duration: 2000 },"easeOutCirc");
+    				});
+					$("#nav-holder").each(function(index) {
+						$(this).hide().delay(100*index).velocity({ opacity: 1 }, { display: "block" }, { duration: 2000 },"easeOutCirc");
+    				});
+				});
         </script>
     </head>
 </head>
-<body>
+<body id="taqPage">
             <!-- NAVIGATION -->
-            <div class="pg-nav"><span id="pg-pageDown" class="pg-prev"></span><span id="pg-pageUp" class="pg-next"></span></div>
-            <!-- SITE NAVIGATION ------------------------------------------------------------->
-          <footer id="nav-holder">
-                <div id="nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
-        	</footer> 
+            <div id="nav-buttons" class="pg-nav"><span class="pg-prev" id="pg-pageDown"></span><span class="pg-next" id="pg-pageUp"></span></div>
             
-            <!-- PAGE 1 ------------------------------------------------------------->
-			<div id="page-1" class="pg-page">
-  			<!-- WRAPPER -->
-            <div class="pg-wrapper">  
-               
-               <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/01-tiny-atlas-quarterly-portrait-erica-shires-S.jpg"></span>
-					<span data-src="images/01-tiny-atlas-quarterly-portrait-erica-shires-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-			   <noscript><img src="images/01-tiny-atlas-quarterly-portrait-erica-shires-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
-                <!-- IMAGE END -->
-               
-               <!-- BOX -->  
-               <div class="pg-box">  
-                   <div class="pg-box-content">
-                        Flo Morrissey<br />
-                        Central Park, New York<br />
-                        <a href="http://ericashires.com" target="_blank">Erica Shires</a>
-                 </div>
-              </div> <!-- end box div -->
-           </div><!-- end wrapper div -->
-           </div>
-           <!-- END PAGE 1 ------------------------------------------------------------->
-          
-          <!-- PAGE 2 ------------------------------------------------------------->
-			<div id="page-2" class="pg-page">
-  			<!-- WRAPPER -->
-            <div class="pg-wrapper">  
-               
-               <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/02-tiny-atlas-quarterly-portrait-meredith-heuer-S.jpg"></span>
-					<span data-src="images/02-tiny-atlas-quarterly-portrait-meredith-heuer-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-					<noscript><img src="images/02-tiny-atlas-quarterly-portrait-meredith-heuer-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
-                <!-- IMAGE END -->
-               
-               <!-- BOX -->  
-               <div class="pg-box">  
-                   <div class="pg-box-content">
-                        August Wright<br />
-                        Beacon, New York<br />
-                        <a href="http://meredithheuer.com" target="_blank">Meredith Heuer</a>
-                 </div>
-              </div> <!-- end box div -->
-           </div><!-- end wrapper div -->
-           </div>
-          <!-- END PAGE 2 ------------------------------------------------------------->
 
-          <!-- PAGE 3 ------------------------------------------------------------->
-			<div id="page-3" class="pg-page">
+            <!-- PAGE 01 ------------------------------------------------------------->
+			<div id="page1" class="pg-page">
   			<!-- WRAPPER -->
             <div class="pg-wrapper">  
-               
+
                <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/03-tiny-atlas-quarterly-portrait-anna-moller-S.jpg"></span>
-					<span data-src="images/03-tiny-atlas-quarterly-portrait-anna-moller-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-					<noscript><img src="images/03-tiny-atlas-quarterly-portrait-anna-moller-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/01-tiny-atlas-quarterly-joshua-tree-Gabriela-Herman-dancing-in-the-desert-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/01-tiny-atlas-quarterly-joshua-tree-Gabriela-Herman-dancing-in-the-desert-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/01-tiny-atlas-quarterly-joshua-tree-Gabriela-Herman-dancing-in-the-desert-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
                 <!-- IMAGE END -->
                
                <!-- BOX -->  
-               <div class="pg-box">  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
                    <div class="pg-box-content">
-                        Girls, Hole Gallery <br />
-                        New York, New York<br />
+                   		Carla Richmond and David Worthington<br />
+                        Joshua Tree, California<br />
+                        <a href="http://www.gabrielaherman.com" target="_blank">Gabriela Herman</a>
+                 	</div>
+              </div> <!-- end box div -->
+           </div><!-- end wrapper div -->
+           </div>
+           <!-- END PAGE 01 ------------------------------------------------------------->
+           
+           <!-- PAGE 02 ------------------------------------------------------------->
+			<div id="page2" class="pg-page">
+  			<!-- WRAPPER -->
+            <div class="pg-wrapper">  
+
+               <!-- IMAGE START -->
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/02-tiny-atlas-quarterly-abby-ross-window-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/02-tiny-atlas-quarterly-abby-ross-window-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/02-tiny-atlas-quarterly-abby-ross-window-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
+                <!-- IMAGE END -->
+               
+               <!-- BOX -->  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
+                   <div class="pg-box-content">
+                   		Nicole Cari<br />
+                        Silverlake, California<br />
+                        <a href="http://abbyross.com" target="_blank">Abby Ross</a>
+                 	</div>
+                    
+              </div> <!-- end box div -->
+           </div><!-- end wrapper div -->
+           </div>
+           <!-- END PAGE 02 ------------------------------------------------------------->
+           
+           <!-- PAGE 03 ------------------------------------------------------------->
+			<div id="page3" class="pg-page">
+  			<!-- WRAPPER -->
+            <div class="pg-wrapper">  
+
+               <!-- IMAGE START -->
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/03-tiny-atlas-quarterly-Storrs-Connecticut-rachel-hullin-mother-and-child-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/03-tiny-atlas-quarterly-Storrs-Connecticut-rachel-hullin-mother-and-child-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/03-tiny-atlas-quarterly-Storrs-Connecticut-rachel-hullin-mother-and-child-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
+                <!-- IMAGE END -->
+               
+               <!-- BOX -->  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
+                   <div class="pg-box-content">
+                   		Mother and Child<br />
+                        Storrs, Connecticut<br />
+                        <a href="http://www.rachelhulin.com" target="_blank">Rachel Hulin</a>
+                 	</div>
+
+              </div> <!-- end box div -->
+           </div><!-- end wrapper div -->
+           </div>
+           <!-- END PAGE 03 ------------------------------------------------------------->
+           
+           <!-- PAGE 04 INTERVIEW ------------------------------------------------------------->
+			<div id="page4" class="pg-page">
+  			<!-- WRAPPER -->
+            <div class="pg-wrapper">  
+
+               <!-- IMAGE START -->
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/04-tiny-atlas-quarterly-joshua-tree-lou-morra-bike-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/04-tiny-atlas-quarterly-joshua-tree-lou-morra-bike-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/04-tiny-atlas-quarterly-joshua-tree-lou-morra-bike-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
+                <!-- IMAGE END -->
+               
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
+               
+              <!-- box div -->  
+               <div id="pg-interview"> 
+               <h2>Ali Beletic</h2> 
+               <!-- <p style="font-size:1.3em;">From local surf breaks to favorite food trucks and more.</p>-->
+               <p>Interview for Tiny Atlas Quarterly</p>
+               <!-- page content -->
+                   <div id="pg-interview-content">
+                        <p><span class="pg-copy-em">Tiny Atlas Quarterly: Q</span></p>
+                        <p>Ali Beletic: A</p>
+                        
+                        <p><span class="pg-copy-em">TAQ: Q</span></p>
+                        <p>AB: A</p>
+                        
+                        <p><span class="pg-copy-em">TAQ: Q</span></p>
+                        <p>AB: A</p>
+                        
+                        <p><span class="pg-copy-em">TAQ: Q</span></p>
+                        <p>AB: A</p>
+                        
+                        <p><span class="pg-copy-em">TAQ: Q</span></p>
+                        <p>AB: A</p>
+                        
+                        <p><span class="pg-copy-em">TAQ: Q</span></p>
+                        <p>AB: A</p>
+                        
+                        <p><span class="pg-copy-em">TAQ: Q</span></p>
+                        <p>AB: A</p>
+
+                   <!-- end page content -->  
+               </div> <!-- end box div -->
+           </div><!-- end interview div -->
+           </div></div>
+          <!-- END PAGE 4 INTERVIEW ------------------------------------------------------------->
+           
+           <!-- PAGE 05 ------------------------------------------------------------->
+			<div id="page5" class="pg-page">
+  			<!-- WRAPPER -->
+            <div class="pg-wrapper">  
+
+               <!-- IMAGE START -->
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/05-tiny-atlas-quarterly-joshua-tree-lou-morra-guitar-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/05-tiny-atlas-quarterly-joshua-tree-lou-morra-guitar-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/05-tiny-atlas-quarterly-joshua-tree-lou-morra-guitar-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
+                <!-- IMAGE END -->
+               
+               <!-- BOX -->  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
+                   <div class="pg-box-content">
+                   		Ali Beletic<br />
+                        Joshua Tree, California<br />
+                        <a href="http://loumora.com/" target="_blank">Lou Morra</a>
+                 	</div>
+                    
+              </div> <!-- end box div -->
+           </div><!-- end wrapper div -->
+           </div>
+           <!-- END PAGE 05 ------------------------------------------------------------->
+           
+           <!-- PAGE 06 ------------------------------------------------------------->
+			<div id="page6" class="pg-page">
+  			<!-- WRAPPER -->
+            <div class="pg-wrapper">  
+
+               <!-- IMAGE START -->
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/06-tiny-atlas-quarterly-Rowayton-Connecticut-anna-moller-man-and-plants-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/06-tiny-atlas-quarterly-Rowayton-Connecticut-anna-moller-man-and-plants-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/06-tiny-atlas-quarterly-Rowayton-Connecticut-anna-moller-man-and-plants-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
+                <!-- IMAGE END -->
+               
+               <!-- BOX -->  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
+                   <div class="pg-box-content">
+                   		Jeff<br />
+                        Rowayton, Connecticut<br />
                         <a href="http://annamoller.net" target="_blank">Anna Moller</a>
-                 </div>
-              </div> <!-- end box div -->
-           </div><!-- end wrapper div -->
-           </div>
-          <!-- END PAGE 3 ------------------------------------------------------------->
-      
-          <!-- PAGE 4 ------------------------------------------------------------->
-			<div id="page-4" class="pg-page">
-  			<!-- WRAPPER -->
-            <div class="pg-wrapper">  
-               
-               <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/04-tiny-atlas-quarterly-portrait-elizabeth-weinberg-S.jpg"></span>
-					<span data-src="images/04-tiny-atlas-quarterly-portrait-elizabeth-weinberg-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-					<noscript><img src="images/04-tiny-atlas-quarterly-portrait-elizabeth-weinberg-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
-                <!-- IMAGE END -->
-               
-               <!-- CAPTION BOX -->  
-               <div class="pg-box">  
-                   <div class="pg-box-content">
-                        Amanda Jasnowski<br />
-                        Angeles Crest, California<br />
-                        <a href="http://elizabethweinberg.com" target="_blank">Elizabeth Weinberg</a>
-                 </div>
-              </div> <!-- end box div -->
-           </div><!-- end wrapper div -->
-           </div>
-          <!-- END PAGE 4 ------------------------------------------------------------->
+                 	</div>
 
-          <!-- PAGE 5 ------------------------------------------------------------->
-			<div id="page-5" class="pg-page">
-  			<!-- WRAPPER -->
-            <div class="pg-wrapper">  
-               
-               <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/05-tiny-atlas-quarterly-portrait-michael-oneal-S.jpg"></span>
-					<span data-src="images/05-tiny-atlas-quarterly-portrait-michael-oneal-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-					<noscript><img src="images/05-tiny-atlas-quarterly-portrait-michael-oneal-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
-                <!-- IMAGE END -->
-               
-               <!-- CAPTION BOX -->  
-               <div class="pg-box">  
-                   <div class="pg-box-content">
-                        Esther<br />
-                        Jackson, Wyoming<br />
-                        <a href="http://mone.al" target="_blank">Michael O&rsquo;Neal</a>
-                 </div>
               </div> <!-- end box div -->
            </div><!-- end wrapper div -->
            </div>
-          <!-- END PAGE 5 ------------------------------------------------------------->
- 
-          <!-- PAGE 6 ------------------------------------------------------------->
-			<div id="page-6" class="pg-page">
+           <!-- END PAGE 06 ------------------------------------------------------------->
+           
+           <!-- PAGE 07 ------------------------------------------------------------->
+			<div id="page7" class="pg-page">
   			<!-- WRAPPER -->
             <div class="pg-wrapper">  
-               
-               <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/06-tiny-atlas-quarterly-portrait-matthew-monteith-S.jpg"></span>
-					<span data-src="images/06-tiny-atlas-quarterly-portrait-matthew-monteith-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-					<noscript><img src="images/06-tiny-atlas-quarterly-portrait-matthew-monteith-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
-                <!-- IMAGE END -->
-               
-               <!-- CAPTION BOX -->  
-               <div class="pg-box">  
-                   <div class="pg-box-content">
-                        Betsie Monteith<br />
-                        Lyons, Colorado<br />
-                        <a href="http://matthewmonteith.com" target="_blank">Matthew Monteith</a>
-                 </div>
-              </div> <!-- end box div -->
-           </div><!-- end wrapper div -->
-           </div>
-          <!-- END PAGE 6 ------------------------------------------------------------->
- 
-          <!-- PAGE 7 ------------------------------------------------------------->
-			<div id="page-7" class="pg-page">
-  			<!-- WRAPPER -->
-            <div class="pg-wrapper">  
-               
-               <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/07-tiny-atlas-quarterly-portrait-stephanie-noritz-S.jpg"></span>
-					<span data-src="images/07-tiny-atlas-quarterly-portrait-stephanie-noritz-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-					<noscript><img src="images/07-tiny-atlas-quarterly-portrait-stephanie-noritz-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
-                <!-- IMAGE END -->
-               
-               <!-- CAPTION BOX -->  
-               <div class="pg-box">  
-                   <div class="pg-box-content">
-                        Katya &amp; Robyn<br />
-                        Caye Caulker, Belize<br />
-                        <a href="http://stephanienoritz.com" target="_blank">Stephanie Noritz</a>
-                 </div>
-              </div> <!-- end box div -->
-           </div><!-- end wrapper div -->
-           </div>
-          <!-- END PAGE 7 ------------------------------------------------------------->
- 
-          <!-- PAGE 8 ------------------------------------------------------------->
-			<div id="page-8" class="pg-page">
-  			<!-- WRAPPER -->
-            <div class="pg-wrapper">  
-               
-               <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/08-tiny-atlas-quarterly-portrait-elizabeth-weinberg-S.jpg"></span>
-					<span data-src="images/08-tiny-atlas-quarterly-portrait-elizabeth-weinberg-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-					<noscript><img src="images/08-tiny-atlas-quarterly-portrait-elizabeth-weinberg-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
-                <!-- IMAGE END -->
-               
-               <!-- CAPTION BOX -->  
-               <div class="pg-box">  
-                   <div class="pg-box-content">
-                        The Falcon&rsquo;s Ride<br />
-                        Palmdale, California<br />
-                        <a href="http://elizabethweinberg.com" target="_blank">Elizabeth Weinberg</a>
-                 </div>
-              </div> <!-- end box div -->
-           </div><!-- end wrapper div -->
-           </div>
-          <!-- END PAGE 8 ------------------------------------------------------------->
 
-          <!-- PAGE 9 ------------------------------------------------------------->
-			<div id="page-9" class="pg-page">
-  			<!-- WRAPPER -->
-            <div class="pg-wrapper">  
-               
                <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/09-tiny-atlas-quarterly-portrait-erin-kunkel-S.jpg"></span>
-					<span data-src="images/09-tiny-atlas-quarterly-portrait-erin-kunkel-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-					<noscript><img src="images/09-tiny-atlas-quarterly-portrait-erin-kunkel-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/07-tiny-atlas-quarterly-katherine-wolkoff-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/07-tiny-atlas-quarterly-katherine-wolkoff-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/07-tiny-atlas-quarterly-katherine-wolkoff-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
                 <!-- IMAGE END -->
                
-               <!-- CAPTION BOX -->  
-               <div class="pg-box">  
+               <!-- BOX -->  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
                    <div class="pg-box-content">
-                        Marco Mignot<br />
-                        Sayulita, Mexico<br />
-                        <a href="http://erinkunkel.com" target="_blank">Erin Kunkel</a>
-                 </div>
-              </div> <!-- end box div -->
-           </div><!-- end wrapper div -->
-           </div>
-          <!-- END PAGE 9 ------------------------------------------------------------->
-
-          <!-- PAGE 10 ------------------------------------------------------------->
-			<div id="page-10" class="pg-page">
-  			<!-- WRAPPER -->
-            <div class="pg-wrapper">  
-               
-               <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/10-tiny-atlas-quarterly-portrait-melissa-kaseman-S.jpg"></span>
-					<span data-src="images/10-tiny-atlas-quarterly-portrait-melissa-kaseman-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-					<noscript><img src="images/10-tiny-atlas-quarterly-portrait-melissa-kaseman-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
-                <!-- IMAGE END -->
-               
-               <!-- CAPTION BOX -->  
-               <div class="pg-box">  
-                   <div class="pg-box-content">
-                        Courtney<br />
-                        La Selva Beach, California<br />
-                        <a href="http://www.melissakaseman.com" target="_blank">Melissa Kaseman</a>
-                 </div>
-              </div> <!-- end box div -->
-           </div><!-- end wrapper div -->
-           </div>
-          <!-- END PAGE 10 ------------------------------------------------------------->
-
-          <!-- PAGE 11 ------------------------------------------------------------->
-			<div id="page-11" class="pg-page">
-  			<!-- WRAPPER -->
-            <div class="pg-wrapper">  
-               
-               <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/11-tiny-atlas-quarterly-portrait-wynn-myers-S.jpg"></span>
-					<span data-src="images/11-tiny-atlas-quarterly-portrait-wynn-myers-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-					<noscript><img src="images/11-tiny-atlas-quarterly-portrait-wynn-myers-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
-                <!-- IMAGE END -->
-               
-               <!-- CAPTION BOX -->  
-               <div class="pg-box">  
-                   <div class="pg-box-content">
-                        Sadie<br />
-                        Austin, Texas<br />
-                        <a href="http://wynnmyers.com" target="_blank">Wynn Myers</a>
-                 </div>
-              </div> <!-- end box div -->
-           </div><!-- end wrapper div -->
-           </div>
-          <!-- END PAGE 11 ------------------------------------------------------------->
-
-          <!-- PAGE 12 ------------------------------------------------------------->
-			<div id="page-12" class="pg-page">
-  			<!-- WRAPPER -->
-            <div class="pg-wrapper">  
-               
-               <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/12-tiny-atlas-quarterly-portrait-carolina-palmgren-S.jpg"></span>
-					<span data-src="images/12-tiny-atlas-quarterly-portrait-carolina-palmgren-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-					<noscript><img src="images/12-tiny-atlas-quarterly-portrait-carolina-palmgren-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
-                <!-- IMAGE END -->
-               
-               <!-- CAPTION BOX -->  
-               <div class="pg-box">  
-                   <div class="pg-box-content">
-                        Simin Erbel<br />
-                        Los Angeles, California<br />
-                        <a href="http://carolinapalmgrenphotography.com" target="_blank">Carolina Palmgren</a>
-                 </div>
-              </div> <!-- end box div -->
-           </div><!-- end wrapper div -->
-           </div>
-          <!-- END PAGE 12 ------------------------------------------------------------->
-
-          <!-- PAGE 13 ------------------------------------------------------------->
-			<div id="page-13" class="pg-page">
-  			<!-- WRAPPER -->
-            <div class="pg-wrapper">  
-               
-               <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/13-tiny-atlas-quarterly-portrait-katherine-wolkoff-S.jpg"></span>
-					<span data-src="images/13-tiny-atlas-quarterly-portrait-katherine-wolkoff-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-					<noscript><img src="images/13-tiny-atlas-quarterly-portrait-katherine-wolkoff-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
-                <!-- IMAGE END -->
-               
-               <!-- CAPTION BOX -->  
-               <div class="pg-box">  
-                   <div class="pg-box-content">
-                        Susan<br />
-                        Monhegan Island, Maine<br />
+                   		WHO<br />
+                        WHERE<br />
                         <a href="http://katherinewolkoff.com" target="_blank">Katherine Wolkoff</a>
-                 </div>
+                 	</div>
+                 
               </div> <!-- end box div -->
            </div><!-- end wrapper div -->
            </div>
-          <!-- END PAGE 13 ------------------------------------------------------------->
-
-          <!-- PAGE 14 ------------------------------------------------------------->
-			<div id="page-14" class="pg-page">
-  			<!-- WRAPPER -->
+           <!-- END PAGE 07 ------------------------------------------------------------->
+           
+           
+            <!-- PAGE 08  ------------------------------------------------------------->
+        	<!-- wrapper div -->  
+			<div id="page8" class="pg-page" >
             <div class="pg-wrapper">  
                
                <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/14-tiny-atlas-quarterly-portrait-katherine-wolkoff-S.jpg"></span>
-					<span data-src="images/14-tiny-atlas-quarterly-portrait-katherine-wolkoff-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-					<noscript><img src="images/14-tiny-atlas-quarterly-portrait-katherine-wolkoff-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/08-tiny-atlas-quarterly-abby-ross-bike-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/08-tiny-atlas-quarterly-abby-ross-bike-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/08-tiny-atlas-quarterly-abby-ross-bike-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
                 <!-- IMAGE END -->
-               
-               <!-- CAPTION BOX -->  
-               <div class="pg-box">  
+                
+                <!-- BOX -->  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
                    <div class="pg-box-content">
-                        Henry<br />
-                        Chatham County, Georgia<br />
-                        <a href="http://katherinewolkoff.com" target="_blank">Katherine Wolkoff</a>
-                 </div>
+                   		WHO<br />
+                        Goma, Demoratic Republic of Congo<br />
+                        <a href="http://abbyross.com" target="_blank">Abby Ross</a>
+                 	</div>
+
               </div> <!-- end box div -->
            </div><!-- end wrapper div -->
-           </div>
-          <!-- END PAGE 14 ------------------------------------------------------------->
-
-          <!-- PAGE 15 ------------------------------------------------------------->
-			<div id="page-15" class="pg-page">
+           </div></div>
+          <!-- END PAGE 8 INTERVIEW ------------------------------------------------------------->
+           
+           <!-- PAGE 09 ------------------------------------------------------------->
+			<div id="page9" class="pg-page">
   			<!-- WRAPPER -->
             <div class="pg-wrapper">  
-               
+
                <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/15-tiny-atlas-quarterly-portrait-emily-nathan-S.jpg"></span>
-					<span data-src="images/15-tiny-atlas-quarterly-portrait-emily-nathan-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-					<noscript><img src="images/15-tiny-atlas-quarterly-portrait-emily-nathan-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/09-tiny-atlas-quarterly-Jaipur-India-Brian-Maranan-Pineda-Woman-at-Amber-Fort-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/09-tiny-atlas-quarterly-Jaipur-India-Brian-Maranan-Pineda-Woman-at-Amber-Fort-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/09-tiny-atlas-quarterly-Jaipur-India-Brian-Maranan-Pineda-Woman-at-Amber-Fort-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
                 <!-- IMAGE END -->
                
-               <!-- CAPTION BOX -->  
-               <div class="pg-box">  
+               <!-- BOX -->  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
                    <div class="pg-box-content">
-                        Jodi Gardner<br />
-                        Munich, Germany<br />
-                        <a href="http://ba-reps.com/photographers/emily-nathan" target="_blank">Emily Nathan</a>
-                 </div>
+                   		Woman at Amber Fort<br />
+                        Jaipur, India<br />
+                        <a href="http://brianpineda.com" target="_blank">Brian Maranan Pineda</a>
+                 	</div>
+
               </div> <!-- end box div -->
            </div><!-- end wrapper div -->
            </div>
-          <!-- END PAGE 15 ------------------------------------------------------------->
-
-          <!-- PAGE 16 ------------------------------------------------------------->
-			<div id="page-16" class="pg-page">
+           <!-- END PAGE 09 ------------------------------------------------------------->
+           
+           <!-- PAGE 10 ------------------------------------------------------------->
+			<div id="page10" class="pg-page">
   			<!-- WRAPPER -->
             <div class="pg-wrapper">  
-               
+
                <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/16-tiny-atlas-quarterly-portrait-matthew-monteith-S.jpg"></span>
-					<span data-src="images/16-tiny-atlas-quarterly-portrait-matthew-monteith-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-					<noscript><img src="images/16-tiny-atlas-quarterly-portrait-matthew-monteith-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/10-tiny-atlas-quarterly-Rowayton-Connecticut-anna-moller-girl-and-window-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/10-tiny-atlas-quarterly-Rowayton-Connecticut-anna-moller-girl-and-window-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/10-tiny-atlas-quarterly-Rowayton-Connecticut-anna-moller-girl-and-window-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
                 <!-- IMAGE END -->
                
-               <!-- CAPTION BOX -->  
-               <div class="pg-box">  
+               <!-- BOX -->  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
                    <div class="pg-box-content">
-                        Clifton Monteith<br />
-                        Lake Ann, Michigan<br />
-                        <a href="http://matthewmonteith.com" target="_blank">Matthew Monteith</a>
-                 </div>
+                   		Joanna<br />
+                        Rowayton, Connecticut<br />
+                        <a href="http://http://annamoller.net" target="_blank">Anna Moller</a>
+                 	</div>
+
               </div> <!-- end box div -->
            </div><!-- end wrapper div -->
            </div>
-          <!-- END PAGE 16 ------------------------------------------------------------->
+           <!-- END PAGE 10 ------------------------------------------------------------->
+           
+           <!-- PAGE 11 ------------------------------------------------------------->
+			<div id="page11" class="pg-page">
+  			<!-- WRAPPER -->
+            <div class="pg-wrapper">  
+
+               <!-- IMAGE START -->
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/11-tiny-atlas-quarterly-Auburn-California-Jenna-Rae-man-and-rocks-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/11-tiny-atlas-quarterly-Auburn-California-Jenna-Rae-man-and-rocks-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/11-tiny-atlas-quarterly-Auburn-California-Jenna-Rae-man-and-rocks-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
+                <!-- IMAGE END -->
+               
+               <!-- BOX -->  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
+                   <div class="pg-box-content">
+                   		Stefan Sorgea <br />
+                        Auburn, California<br />
+                        <a href="http://jennaraephotos.com/" target="_blank">Jenna Rae</a>
+                 	</div>
+
+              </div> <!-- end box div -->
+           </div><!-- end wrapper div -->
+           </div>
+           <!-- END PAGE 11 ------------------------------------------------------------->
+           
+           <!-- PAGE 12 ------------------------------------------------------------->
+			<div id="page12" class="pg-page">
+  			<!-- WRAPPER -->
+            <div class="pg-wrapper">  
+
+               <!-- IMAGE START -->
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/12-tiny-atlas-quarterly-MinamiAso-Japan-Brian-Maranan-Pineda-tea-ceremony-teacher-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/12-tiny-atlas-quarterly-MinamiAso-Japan-Brian-Maranan-Pineda-tea-ceremony-teacher-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/12-tiny-atlas-quarterly-MinamiAso-Japan-Brian-Maranan-Pineda-tea-ceremony-teacher-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
+                <!-- IMAGE END -->
+               
+               <!-- BOX -->  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
+                   <div class="pg-box-content">
+                   		Kumiko-san, Japanese tea ceremony teacher<br />
+                        MinamiAso, Japan<br />
+                        <a href="http://brianpineda.com" target="_blank">Brian Maranan Pineda</a>
+                 	</div>
+
+              </div> <!-- end box div -->
+           </div><!-- end wrapper div -->
+           </div>
+           <!-- END PAGE 12 ------------------------------------------------------------->
+           
+           <!-- PAGE 13 ------------------------------------------------------------->
+			<div id="page13" class="pg-page">
+  			<!-- WRAPPER -->
+            <div class="pg-wrapper">  
+
+               <!-- IMAGE START -->
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/13-tiny-atlas-quarterly-abby-ross-woman-sticks-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/13-tiny-atlas-quarterly-abby-ross-woman-sticks-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/13-tiny-atlas-quarterly-abby-ross-woman-sticks-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
+                <!-- IMAGE END -->
+               
+               <!-- BOX -->  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
+                   <div class="pg-box-content">
+                   		WHO<br />
+                        Road from Sake to Masisi, Demoratic Republic of Congo<br />
+                        <a href="http://abbyross.com" target="_blank">Abby Ross</a>
+                 	</div>
+                    
+              </div> <!-- end box div -->
+           </div><!-- end wrapper div -->
+           </div>
+           <!-- END PAGE 13 ------------------------------------------------------------->
+           
+           <!-- PAGE 14 ------------------------------------------------------------->
+			<div id="page14" class="pg-page">
+  			<!-- WRAPPER -->
+            <div class="pg-wrapper">  
+
+               <!-- IMAGE START -->
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/14-tiny-atlas-quarterly-Colombo-Sri-Lanka-Brian-Maranan-Pineda-Greeter-at-The-Galle-Face-Hotel-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/14-tiny-atlas-quarterly-Colombo-Sri-Lanka-Brian-Maranan-Pineda-Greeter-at-The-Galle-Face-Hotel-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/14-tiny-atlas-quarterly-Colombo-Sri-Lanka-Brian-Maranan-Pineda-Greeter-at-The-Galle-Face-Hotel-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
+                <!-- IMAGE END -->
+               
+               <!-- BOX -->  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
+                   <div class="pg-box-content">
+                   		Kuttan, Greeter at The Galle Face Hotel<br />
+                        Colombo, Sri Lanka<br />
+                        <a href="http://brianpineda.com" target="_blank">Brian Maranan Pineda</a>
+                 	</div>
+                 
+              </div> <!-- end box div -->
+           </div><!-- end wrapper div -->
+           </div>
+           <!-- END PAGE 14 ------------------------------------------------------------->
+           
+           <!-- PAGE 15 ------------------------------------------------------------->
+			<div id="page15" class="pg-page">
+  			<!-- WRAPPER -->
+            <div class="pg-wrapper">  
+
+               <!-- IMAGE START -->
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/15-tiny-atlas-quarterly-joshua-tree-Gabriela-Herman-woman-and-blue-car-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/15-tiny-atlas-quarterly-joshua-tree-Gabriela-Herman-woman-and-blue-car-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/15-tiny-atlas-quarterly-joshua-tree-Gabriela-Herman-woman-and-blue-car-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
+                <!-- IMAGE END -->
+               
+               <!-- BOX -->  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
+                   <div class="pg-box-content">
+                   		Lisa Weatherbee<br />
+                        Joshua Tree, California<br />
+                        <a href="http://www.gabrielaherman.com" target="_blank">Gabriela Herman</a>
+                 	</div>
+                    
+              </div> <!-- end box div -->
+           </div><!-- end wrapper div -->
+           </div>
+           <!-- END PAGE 15 ------------------------------------------------------------->
+           
+           <!-- PAGE 16 ------------------------------------------------------------->
+			<div id="page16" class="pg-page">
+  			<!-- WRAPPER -->
+            <div class="pg-wrapper">  
+
+               <!-- IMAGE START -->
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/16-tiny-atlas-quarterly-marfa-texas-amanda-marsalis-women-and-fence-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/16-tiny-atlas-quarterly-marfa-texas-amanda-marsalis-women-and-fence-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/16-tiny-atlas-quarterly-marfa-texas-amanda-marsalis-women-and-fence-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
+                <!-- IMAGE END -->
+               
+               <!-- BOX -->  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
+                   <div class="pg-box-content">
+                   		Emily and Kenny<br />
+                        Marfa, Texas<br />
+                        <a href="http://www.amandamarsalis.com" target="_blank">Amanda Marsallis</a>
+                 	</div>
+
+              </div> <!-- end box div -->
+           </div><!-- end wrapper div -->
+           </div>
+           <!-- END PAGE 16 ------------------------------------------------------------->
+           
+           <!-- PAGE 17 ------------------------------------------------------------->
+			<div id="page17" class="pg-page">
+  			<!-- WRAPPER -->
+            <div class="pg-wrapper">  
+
+               <!-- IMAGE START -->
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/17-tiny-atlas-quarterly-Mexico-City-Mexico-helena-price-man-and-bike-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/17-tiny-atlas-quarterly-Mexico-City-Mexico-helena-price-man-and-bike-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/17-tiny-atlas-quarterly-Mexico-City-Mexico-helena-price-man-and-bike-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
+                <!-- IMAGE END -->
+               
+               <!-- BOX -->  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
+                   <div class="pg-box-content">
+                   		Tony<br />
+                        Mexico City, Mexico<br />
+                        <a href="http://helenaprice.com" target="_blank">Helena Price</a>
+                 	</div>
+
+              </div> <!-- end box div -->
+           </div><!-- end wrapper div -->
+           </div>
+           <!-- END PAGE 17 ------------------------------------------------------------->
+           
+           <!-- PAGE 18 ------------------------------------------------------------->
+			<div id="page18" class="pg-page">
+  			<!-- WRAPPER -->
+            <div class="pg-wrapper">  
+
+               <!-- IMAGE START -->
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/18-tiny-atlas-quarterly-Llano-Texas-wynn-meyers-girl-in-cowboy-boots-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/18-tiny-atlas-quarterly-Llano-Texas-wynn-meyers-girl-in-cowboy-boots-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/18-tiny-atlas-quarterly-Llano-Texas-wynn-meyers-girl-in-cowboy-boots-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
+                <!-- IMAGE END -->
+               
+               <!-- BOX -->  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
+                   <div class="pg-box-content">
+                   		April<br />
+                        Llano, Texas<br />
+                        <a href="http://www.wynnmyers.com/" target="_blank">Wynn Myers</a>
+                 	</div>
  
-          <!-- PAGE 17 ------------------------------------------------------------->
-			<div id="page-17" class="pg-page">
-  			<!-- WRAPPER -->
-            <div class="pg-wrapper">  
-               
-               <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/17-tiny-atlas-quarterly-portrait-anais-dax-S.jpg"></span>
-					<span data-src="images/17-tiny-atlas-quarterly-portrait-anais-dax-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-					<noscript><img src="images/17-tiny-atlas-quarterly-portrait-anais-dax-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
-                <!-- IMAGE END -->
-               
-               <!-- CAPTION BOX -->  
-               <div class="pg-box">  
-                   <div class="pg-box-content">
-                        Anais<br />
-                        Hamilton, Montana<br />
-                        <a href="http://anaisdax.com" target="_blank">Anais &amp; Dax</a>
-                 </div>
               </div> <!-- end box div -->
            </div><!-- end wrapper div -->
            </div>
-          <!-- END PAGE 17 ------------------------------------------------------------->
- 
-          <!-- PAGE 18 ------------------------------------------------------------->
-			<div id="page-18" class="pg-page">
+           <!-- END PAGE 18 ------------------------------------------------------------->
+           
+           <!-- PAGE 19 ------------------------------------------------------------->
+			<div id="page19" class="pg-page">
   			<!-- WRAPPER -->
             <div class="pg-wrapper">  
-               
-               <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/18-tiny-atlas-quarterly-portrait-erica-shires-S.jpg"></span>
-					<span data-src="images/18-tiny-atlas-quarterly-portrait-erica-shires-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-					<noscript><img src="images/18-tiny-atlas-quarterly-portrait-erica-shires-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
-                <!-- IMAGE END -->
-               
-               <!-- CAPTION BOX -->  
-               <div class="pg-box">  
-                   <div class="pg-box-content">
-                        Rachel Blais<br />
-                        Brooklyn, New York<br />
-                        <a href="http://ericashires.com" target="_blank">Erica Shires</a>
-                 </div>
-              </div> <!-- end box div -->
-           </div><!-- end wrapper div -->
-           </div>
-          <!-- END PAGE 18 ------------------------------------------------------------->
 
-          <!-- PAGE 19 ------------------------------------------------------------->
-<div id="page-19" class="pg-page">
-  			<!-- WRAPPER -->
-            <div class="pg-wrapper">  
-               
                <!-- IMAGE START -->
-               <span data-picture data-alt="Tiny Atlas Quarterly Portraits">
-					<span data-src="images/19-tiny-atlas-quarterly-portrait-jessica-sample-S.jpg"></span>
-					<span data-src="images/19-tiny-atlas-quarterly-portrait-jessica-sample-L.jpg" data-media="(min-width: 800px)"></span>
-					<!-- Fallback -->
-					<noscript><img src="images/19-tiny-atlas-quarterly-portrait-jessica-sample-S.jpg" alt="Tiny Atlas Quarterly Portraits"></noscript>
-			  </span>
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/19-tiny-atlas-quarterly-Palm-Springs-California-terri-loewenthal-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/19-tiny-atlas-quarterly-Palm-Springs-California-terri-loewenthal-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/19-tiny-atlas-quarterly-Palm-Springs-California-terri-loewenthal-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
                 <!-- IMAGE END -->
                
-               <!-- CAPTION BOX -->  
-               <div class="pg-box">  
+               <!-- BOX -->  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
                    <div class="pg-box-content">
-                        Brent Walker<br />
-                        Griffith Park, Los Angeles<br />
-                        <a href="http://jessicasample.com" target="_blank">Jessica Sample</a>
-                 </div>
+                   		Theo and Dan<br />
+                        Palm Springs, California<br />
+                        <a href="http://terriloewenthal.com" target="_blank">Terri Loewenthal</a>
+                 	</div>
+
+			</div> <!-- end box div -->
+           </div><!-- end wrapper div -->
+           </div>
+           <!-- END PAGE 19 ------------------------------------------------------------->
+           
+           <!-- PAGE 20 ------------------------------------------------------------->
+			<div id="page20" class="pg-page">
+  			<!-- WRAPPER -->
+            <div class="pg-wrapper">  
+
+               <!-- IMAGE START -->
+               <picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="images/20-tiny-atlas-quarterly-Quemado-New-Mexico-terri-loewenthal-woman-on-deck-L.jpg" media="(min-width: 960px)">
+                 	<source srcset="images/20-tiny-atlas-quarterly-Quemado-New-Mexico-terri-loewenthal-woman-on-deck-M.jpg" media="(min-width: 768px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="images/20-tiny-atlas-quarterly-Quemado-New-Mexico-terri-loewenthal-woman-on-deck-S.jpg" alt="Tiny Atlas Quarterly, Place">
+			  </picture>
+                <!-- IMAGE END -->
+               
+               <!-- BOX -->  
+               <div class="pg-box"> 
+               <div class="pg-box-nav"><a href="../../index.html"><img src="../../images/tiny-atlas-sm.jpg" alt="Tiny Atlas Quarterly"></a></div>
+                   <div class="pg-box-content">
+                   		Joanne<br />
+                        Quemado, New Mexico<br />
+                        <a href="http://terriloewenthal.com" target="_blank">Terri Loewenthal</a>
+                 	</div>
+
               </div> <!-- end box div -->
            </div><!-- end wrapper div -->
            </div>
-          <!-- END PAGE 19 ------------------------------------------------------------->
+           <!-- END PAGE 20 ------------------------------------------------------------->
 
-          
         <!----------------------------------------------------------------->
+        <script type="text/javascript" src="../../js/hammer.min.js"></script> 
+        
         <script>
-			//----------------- SLIDE SHOW ------------------------------//
-			var pgPages = new Array();
-			pgPages[0] 	= "page-1";
-			pgPages[1] 	= "page-2";
-			pgPages[2] 	= "page-3";
-			pgPages[3] 	= "page-4";
-			pgPages[4] 	= "page-5";
-			pgPages[5] 	= "page-6";
-			pgPages[6] 	= "page-7";
-			pgPages[7] 	= "page-8";
-			pgPages[8] 	= "page-9";
-			pgPages[9] 	= "page-10";
-			pgPages[10] = "page-11";
-			pgPages[11] = "page-12";
-			pgPages[12] = "page-13";
-			pgPages[13] = "page-14";
-			pgPages[14] = "page-15";
-			pgPages[15] = "page-16";
-			pgPages[16] = "page-17";
-			pgPages[17] = "page-18";
-			pgPages[18] = "page-19";
-
+			//----------------- SLIDE SHOW ------------------------------//			
+			var pgPages = new Array(	"page1",
+									"page2",
+									"page3",
+									"page4",
+									"page5",
+									"page6",
+									"page7",
+									"page8",
+									"page9",
+									"page10",
+									"page11",
+									"page12",
+									"page13",
+									"page14",
+									"page15",
+									"page16",
+									"page17",
+									"page18",
+									"page19",
+									"page20");
 			var pageCount = 0;
 			var pageNext;
-			$('#pg-pageUp').bind('click', function() {
+			$('#pg-pageUp').on('click', function() {
 				pageUp();
 			});
-			$('#pg-pageDown').bind('click', function() {
+			
+			$('#pg-pageDown').on('click', function() {
 				pageDown();
 			});
+			
+			
+			//------ START UP DOWN ------//
 			function pageUp()
 			{
 				if (pageCount == (pgPages.length - 1)) {
-					$("#" + pgPages[pgPages.length - 1]).fadeOut(1000,'linear');					
+					$("#" + pgPages[pgPages.length - 1]).velocity({ opacity: 0 }, { display: "none" }, { duration: 1000 } , "easeInOutQuint");	// OUT				
 					pageCount = 0;
-					$("#" + pgPages[pageCount]).fadeIn(1000,'linear');
+					$("#" + pgPages[pageCount]).velocity({ opacity: 1 }, { display: "block" }, { duration: 1000 } , "easeInOutQuint"); 			// IN
 				} else {
 					pageNext = pageCount + 1;
-					$("#" + pgPages[pageCount]).fadeOut(1000,'linear');
-					$("#" + pgPages[pageNext]).fadeIn(1000,'linear');
+					$("#" + pgPages[pageCount]).velocity({ opacity: 0 }, { display: "none" }, { duration: 1000 } , "easeInOutQuint"); 			// OUT
+					$("#" + pgPages[pageNext]).velocity({ opacity: 1 }, { display: "block" }, { duration: 1000 } , "easeInOutQuint"); 			// IN
 					pageCount++;
 				}
 			}
+
 			function pageDown()
 			{
 				if (pageCount == 0) {
-					$("#" + pgPages[0]).fadeOut(1000,'linear');
-					$("#" + pgPages[pgPages.length - 1]).fadeIn(1000,'linear');
+					$("#" + pgPages[0]).velocity({ opacity: 0 }, { display: "none" });  								// OUT
+					$("#" + pgPages[pgPages.length - 1]).velocity({ opacity: 1 }, { display: "block" }, { duration: 1000 } , "easeInOutQuint");	// IN
 					pageCount = pgPages.length - 1;
 				} else {
 					pageNext = pageCount - 1;
-					$("#" + pgPages[pageCount]).fadeOut(1000,'linear');
-					$("#" + pgPages[pageNext]).fadeIn(1000,'linear');
+					$("#" + pgPages[pageCount]).velocity({ opacity: 0 }, { display: "none" }, { duration: 1000 } , "easeInOutQuint");			// OUT
+					$("#" + pgPages[pageNext]).velocity({ opacity: 1 }, { display: "block" }, { duration: 1000 } , "easeInOutQuint");			// IN
 					pageCount--;
 				}
-			}//----------------- END SLIDE SHOW -----------------//
-			//------------------ LOGO POSITION -----------------//
-			function pgPositionLogo () {
-				var h=window.innerWidth;
-				//alert(h);
-				if (h<800) {
-					var hh = ((Math.ceil(h*0.8)));
-				} else if (h>800 && h<1200) {
-					var hh = ((Math.ceil(h*0.7)));
-				} else if (h>1200) {
-					var hh = ((Math.ceil(h*0.7)));
-				}
-				if (hh > 1220) {
-					hh = 1220;
-				}
-				var hhh = hh +"px";
-				$('#nav-holder').css("top",hhh);
 			}
-			window.onresize=function(){ pgPositionLogo () };
-			//------------------ END LOGO POSITION -----------------//
+			//------ END UP DOWN ------//
+			
+			// TOUCH HANDLERS
+			var myElement = document.getElementById('taqPage');
+			var mc = new Hammer(myElement);
+
+			// listen to events...
+			mc.on("swipeleft", function() {
+    			pageUp();
+			});
+			mc.on("swiperight", function() {
+    			pageDown();
+			});
+
+			//----------------- END SLIDE SHOW -----------------//
+			</script>
+            
+            
         <!-------------------- THE GOOGLE --------------------->
+        <script>
 		  var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-39716054-1']);
 		  _gaq.push(['_trackPageview']);

@@ -363,6 +363,7 @@ div.pg-box-content {
 	background-color:#FFF;  
 	opacity:0.8; 
     filter:alpha(opacity=80); /* IE transparency */
+	font-family: 'NewsGothicBT-RomanCondensed',sans-serif;
 	padding: 1.5em;
 	text-align: left;
 }
@@ -390,11 +391,16 @@ div.pg-box-content {
 #pg-interview p {
 	margin: 0 0 1em 0;
 	font-size: 1.1em;
+	font-family: 'harriet_display_regularRg';
+	line-height:150%;
 }
 
 .pg-copy-em {
-	color:#666
+	color:#000;
+	font-size:1.3em;
+	font-family: 'NewsGothicBT-RomanCondensed',sans-serif;
 }
+
 
 #pg-interview a  {
 	color:#000; background-color:#e6e6e6;
