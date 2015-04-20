@@ -522,7 +522,7 @@ div.pg-credits-box-break {
 	
 
 div.pg-credits-box a, div.pg-wardrobe-label a {
-	color:#000; background-color:#cde8d7; padding: 0 0.3em;
+	color:#000; background-color:#b2cfeb; padding: 0 0.3em;
 }
 
 div.pg-credits-box a:link, div.pg-credits-box a:visited, div.pg-wardrobe-label a:link, div.pg-wardrobe-label a:visited {
@@ -530,7 +530,7 @@ div.pg-credits-box a:link, div.pg-credits-box a:visited, div.pg-wardrobe-label a
 }
 
 div.pg-credits-box a:hover, div.pg-credits-box a:active, div.pg-wardrobe-label a:hover, div.pg-wardrobe-label a:active {
-	text-decoration:none; background-color: #125c2f; color:#fff;
+	text-decoration:none; background-color: #3f3532; color:#fff;
 }
 
 div.pg-credits-box img {

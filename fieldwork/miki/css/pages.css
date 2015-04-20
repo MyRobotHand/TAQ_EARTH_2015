@@ -522,7 +522,7 @@ div.pg-credits-box-break {
 	
 
 div.pg-credits-box a, div.pg-wardrobe-label a {
-	color:#000; background-color:#cde8d7; padding: 0 0.3em;
+	color:#000; background-color:#bae1f9; padding: 0 0.3em;
 }
 
 div.pg-credits-box a:link, div.pg-credits-box a:visited, div.pg-wardrobe-label a:link, div.pg-wardrobe-label a:visited {
@@ -530,7 +530,7 @@ div.pg-credits-box a:link, div.pg-credits-box a:visited, div.pg-wardrobe-label a
 }
 
 div.pg-credits-box a:hover, div.pg-credits-box a:active, div.pg-wardrobe-label a:hover, div.pg-wardrobe-label a:active {
-	text-decoration:none; background-color: #125c2f; color:#fff;
+	text-decoration:none; background-color: #0e517d; color:#fff;
 }
 
 div.pg-credits-box img {
@@ -544,6 +544,85 @@ div.pg-credits-box img {
 
 .pg-contributor {
 	text-transform: uppercase;
+}
+
+
+/*-----------    INTEREVIEW    --------------*/
+#pg-interview {
+	position:absolute;
+	top:	15%;
+    width:	40%;  
+    left:	55.749128919861%;
+	background-color:#FFF;  
+	opacity:0.8; 
+    filter:alpha(opacity=80); /* IE transparency */
+	
+	font-family: 'NewsGothicBT-RomanCondensed',sans-serif;
+	padding: 1.5em;
+	text-align: left;
+}
+
+#pg-interview-content {
+	font-size: 0.75em;
+	line-height: 140%;
+	letter-spacing: 0.1em;
+	color: #000;
+	
+	-moz-column-count: 1;
+	-moz-column-gap: 1.5em;
+	-moz-column-rule: none;
+	-moz-column-width: 100%;
+	-webkit-column-count: 1;
+	-webkit-column-gap: 1.5em;
+	-webkit-column-rule: none;
+	-webkit-column-width: 100%;
+	column-count: 1;
+	column-gap: 1.5em;
+	column-rule: none;
+	column-width: 100%;
+}
+
+
+#pg-interview h2 {
+	font-variant:normal;
+	text-transform:none;
+	font-size: 2em;
+	line-height:100%;
+	margin:0 0 0.5em 0;
+	padding:0;
+}
+
+#pg-interview h3 {
+	font-weight:normal;
+	color:#000;
+	font-size:1.2em;
+	font-family: 'NewsGothicBT-RomanCondensed',sans-serif;
+	
+}
+
+#pg-interview p {
+	margin: 0 0 1em 0;
+	font-size: 1.3em;
+	font-family: 'harriet_display_regularRg';
+	line-height:150%;
+}
+
+.pg-copy-em {
+	color:#0f5f91;
+	font-size:1.2em;
+	font-family: 'NewsGothicBT-RomanCondensed',sans-serif;
+}
+
+#pg-interview a  {
+	color:#000; background-color:#e6e6e6;
+}
+
+#pg-interview a:link, #pg-interview a:visited {
+	text-decoration:none;
+}
+
+#pg-interview a:hover, #pg-interview a:active {
+	text-decoration:underline;
 }
 
 /*----------- MEDIA QUERIES -------------------- */

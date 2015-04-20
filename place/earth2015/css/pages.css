@@ -349,12 +349,6 @@ div.pg-box-content {
 
 
 /*-----------    INTEREVIEW    --------------*/
-#page-interview {
-	display:none;
-	z-index: 20;
-	font-family: 'NewsGothicBT-RomanCondensed',sans-serif;
-}
-
 #pg-interview {
 	position:absolute;
 	top:	15%;
@@ -363,6 +357,7 @@ div.pg-box-content {
 	background-color:#FFF;  
 	opacity:0.8; 
     filter:alpha(opacity=80); /* IE transparency */
+	
 	font-family: 'NewsGothicBT-RomanCondensed',sans-serif;
 	padding: 1.5em;
 	text-align: left;
@@ -374,33 +369,50 @@ div.pg-box-content {
 	letter-spacing: 0.1em;
 	color: #000;
 	
-	-moz-column-count: 2;
+	-moz-column-count: 1;
 	-moz-column-gap: 1.5em;
 	-moz-column-rule: none;
-	-moz-column-width: 50%;
-	-webkit-column-count: 2;
+	-moz-column-width: 100%;
+	-webkit-column-count: 1;
 	-webkit-column-gap: 1.5em;
 	-webkit-column-rule: none;
-	-webkit-column-width: 50%;
-	column-count: 2;
+	-webkit-column-width: 100%;
+	column-count: 1;
 	column-gap: 1.5em;
 	column-rule: none;
-	column-width: 50%;
+	column-width: 100%;
+}
+
+
+#pg-interview h2 {
+	font-variant:normal;
+	text-transform:none;
+	font-size: 2em;
+	line-height:100%;
+	margin:0 0 0.5em 0;
+	padding:0;
+}
+
+#pg-interview h3 {
+	font-weight:normal;
+	color:#000;
+	font-size:1.2em;
+	font-family: 'NewsGothicBT-RomanCondensed',sans-serif;
+	
 }
 
 #pg-interview p {
 	margin: 0 0 1em 0;
-	font-size: 1.1em;
+	font-size: 1.3em;
 	font-family: 'harriet_display_regularRg';
 	line-height:150%;
 }
 
 .pg-copy-em {
-	color:#000;
+	color:#485567;
 	font-size:1.3em;
 	font-family: 'NewsGothicBT-RomanCondensed',sans-serif;
 }
-
 
 #pg-interview a  {
 	color:#000; background-color:#e6e6e6;
@@ -413,6 +425,7 @@ div.pg-box-content {
 #pg-interview a:hover, #pg-interview a:active {
 	text-decoration:underline;
 }
+
 
 /*-------------------------*/
 div.pg-box a {
@@ -532,18 +545,18 @@ div.pg-box a:hover, div.pg-box a:active {
 		letter-spacing: 0.1em;
 		color: #000;
 		
-		-moz-column-count: 2;
-		-moz-column-gap: 1.5em;
+		-moz-column-count: 1;
+		-moz-column-gap: 0;
 		-moz-column-rule: none;
-		-moz-column-width: 50%;
-		-webkit-column-count: 2;
-		-webkit-column-gap: 1.5em;
+		-moz-column-width: 100%;
+		-webkit-column-count: 1;
+		-webkit-column-gap: 0;
 		-webkit-column-rule: none;
-		-webkit-column-width: 50%;
-		column-count: 2;
-		column-gap: 1.5em;
+		-webkit-column-width: 100%;
+		column-count: 1;
+		column-gap: 0;
 		column-rule: none;
-		column-width: 50%;
+		column-width: 100%;
 	}
 
 }
