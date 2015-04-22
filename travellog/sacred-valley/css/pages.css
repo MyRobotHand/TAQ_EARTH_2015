@@ -474,6 +474,18 @@ div.text-box-a a:hover, div.text-box-a a:active {
 }
 
 
+div.pg-lower-caption a {
+	color:#000; background-color:#ccc; padding: 0;
+}
+
+div.pg-lower-caption a:link, div.pg-lower-caption a:visited {
+	text-decoration:none;
+}
+
+div.pg-lower-caption a:hover, div.pg-lower-caption a:active {
+	text-decoration:none; background-color: #666; color:#fff;
+}
+
 /*-----------    CONTRIBUTORS + RESOURCES   --------------*/
 #page-contributors {
 	display:none;
